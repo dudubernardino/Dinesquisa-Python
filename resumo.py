@@ -3,13 +3,13 @@ import Algorithmia
 arquivo = open('resumo.txt', 'w')
 
 def pesquisar(input):
-    client = Algorithmia.client('simFhhDQMeECjRN/U9nagwtA5hy1')
+    client = Algorithmia.client('CLIENT_KEY')
     algo = client.algo('web/WikipediaParser/0.1.2?')
     algo.set_options(timeout=300)
     return algo.pipe(input).result
 
 def resumir(input):
-    client = Algorithmia.client('simFhhDQMeECjRN/U9nagwtA5hy1')
+    client = Algorithmia.client('CLIENT_KEY')
     algo = client.algo('nlp/Summarizer/0.1.8')
     algo.set_options(timeout=300)
     return algo.pipe(input).result
